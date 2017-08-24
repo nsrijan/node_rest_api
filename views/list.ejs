@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Lists</title>
+
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+	<style>
+		*{
+			
+			font-family: verdana;
+		
+	</style>
+
+</head>
+
+<body>
+	<h1>This is list page</h1>
+
+	<table class="table table-striped">
+
+		<th>Id</th>
+		<th>Lastupdate</th>
+		<th>Title</th>
+		<th>SOURCE</th>
+		<th>SUMMARY</th>
+		<th>COMPLETECONTENT</th>
+		<th>LINK</th>
+		<% for ( var i = 0; i < body.items.length; i++) { %>
+			<tr>
+				<!-- <td><a href="/api/<%= body.items[i].id %>"><%= body.items[i].id %></a></td> -->
+				<td><a href="/api/<%= i %>"><%= body.items[i].id %>
+				<td><%= body.items[i].lastUpdate %></td>
+				<td><%= body.items[i].title %></td>
+				<td><%= body.items[i].source %></td>
+				<td><%= body.items[i].summary %></td>
+				<!-- <td><%= body.items[i].completeContent %></td>
+ -->				<td><%= body.items[i].link %></td>
+				<td><img src="<%= body.items[i].image_url %>" height="100px" width="100px"/></td>
+			</tr> 
+
+		<% } %>
+		
+	</table>	
+	
+	
+	
+</body>
+</html>
